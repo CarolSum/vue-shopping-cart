@@ -71,14 +71,6 @@ const store = new Vuex.Store({
     deleteCart (state, id) {
       const index = state.cartList.findIndex(item => item.id === id);
       state.cartList.splice(index, 1);
-    }
-  },
-  actions: {
-    // 请求商品列表
-    getProductList (context) {
-      setTimeout(() => {
-        context.commit('setProductList', product_data);
-      }, 500);
     },
     addCart (state, id) {
       const isAdded = state.cartList.find(item => item.id === id);
@@ -90,6 +82,14 @@ const store = new Vuex.Store({
           count: 1
         });
       }
+    }
+  },
+  actions: {
+    // 请求商品列表
+    getProductList (context) {
+      setTimeout(() => {
+        context.commit('setProductList', product_data);
+      }, 500);
     }
   }
 });

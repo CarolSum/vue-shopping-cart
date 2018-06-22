@@ -2,7 +2,7 @@
   <div class="cart">
     <div class="cart-header">
       <div class="cart-header-title">购物清单</div>
-      <div class="cart-header-main">
+      <div class="cart-content-main">
         <div class="cart-info">商品信息</div>
         <div class="cart-price">单价</div>
         <div class="cart-count">数量</div>
@@ -109,59 +109,59 @@
     text-align: center;
     padding: 32px;
   }
-.cart-title-main div{
-  text-align: center;
-  float: left;
-  font-size: 14px;
-}
-div.cart-info{
-  width: 60%;
-  text-align: left;
-}
-.cart-price{
-  width: 10%;
-}
-.cart-count{
-  width: 10%;
-}
-.cart-delete{
-  width: 10%;
-}
-.cart-cost{
-  width: 10%;
-}
-.cart-content-main{
-  padding: 0 32px;
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
-  border-bottom: 1px dashed #e9eaec;
-  overflow: hidden;
-}
-.cart-content-main div{
-  float: left;
-}
-.cart-content-main img{
-  width: 40px;
-  height: 40px;
-  position: relative;
-  top: 10px;
-}
-.cart-control-minus,
-.cart-control-add{
-  display: inline-block;
-  margin: 0 4px;
-  width: 24px;
-  height: 24px;
-  line-height: 22px;
-  text-align: center;
-  background: #f8f8f9;
-  border-radius: 50%;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-.cart-control-delete{
-  cursor: pointer;
-  color: #2d8cf0;
-}
+  .cart-title-main div{
+    text-align: center;
+    float: left;
+    font-size: 14px;
+  }
+  div.cart-info{
+    width: 60%;
+    text-align: left;
+  }
+  .cart-price{
+    width: 10%;
+  }
+  .cart-count{
+    width: 10%;
+  }
+  .cart-delete{
+    width: 10%;
+  }
+  .cart-cost{
+    width: 10%;
+  }
+  .cart-content-main{
+    padding: 0 32px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-bottom: 1px dashed #e9eaec;
+    overflow: hidden;
+  }
+  .cart-content-main div{
+    float: left;
+  }
+  .cart-content-main img{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 10px;
+  }
+  .cart-control-minus,
+  .cart-control-add{
+    display: inline-block;
+    margin: 0 4px;
+    width: 24px;
+    height: 24px;
+    line-height: 22px;
+    text-align: center;
+    background: #f8f8f9;
+    border-radius: 50%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  .cart-control-delete{
+    cursor: pointer;
+    color: #2d8cf0;
+  }
 </style>

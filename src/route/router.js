@@ -20,6 +20,10 @@ const routes = [
       title: '购物车'
     },
     component: (resolve) => require(['../views/cart.vue'], resolve)
+  },
+  {
+    path: '*',
+    redirect: '/list'
   }
 ]
 
