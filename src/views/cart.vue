@@ -33,6 +33,26 @@
       </div>
       <div class="cart-empty" v-if="!cartList.length">购物车为空</div>
     </div>
+    <div class="cart-promotion" v-show="cartList.length">
+      <span>使用优惠码：</span>
+      <input type="text" v-model="promotionCode">
+      <span class="cart-control-promotion" @click="handleCheckCode">验证</span>
+    </div>
+    <div class="cart-footer" v-show="cartList.length">
+      <div class="cart-footer-desc">
+        共计 <span>{{ countAll }}</span>件商品
+      </div>
+      <div class="cart-footer-desc">
+        应付总额 <span>$ {{ costAll - promotion }}</span>
+        <br>
+        <template v-if="promotion">
+          (优惠 <span>$ {{ promotion }}</span>)
+        </template>
+      </div>
+      <div class="cart-footer-desc">
+        <div class="cart-control-order" @click="handleOrder">现在结算</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -68,7 +88,9 @@
     },
     data () {
       return {
-        productList: product_data
+        productList: product_data,
+        promotion: 0,
+        promotionCode: ''
       }
     },
     methods: {
@@ -81,6 +103,22 @@
       },
       handleDelete (index) {
         this.$store.commit('deleteCart', this.cartList[index].id);
+      },
+      handleCheckCode () {
+        if(this.promotionCode === ''){
+          window.alert('请输入优惠码');
+          return;
+        }
+        if(this.promotionCode !== 'Vue.js'){
+          window.alert('优惠码验证失败');
+        }else{
+          this.promotion = 500;
+        }
+      },
+      handleOrder () {
+        this.$store.dispatch('buy').then(() => {
+          window.alert('购买成功');
+        })
       }
     }
   }
@@ -164,4 +202,22 @@
     cursor: pointer;
     color: #2d8cf0;
   }
+  .cart-promotion{
+    padding: 16px 32px;
+  }
+  .cart-control-promotion,
+  .cart-control-order{
+    display: inline-block;
+    padding: 8px 32px;
+    border-radius: 6px;
+    background: #2d8cf0;
+    color: #fff;
+    cursor: pointer;
+  }
+  .cart-control-promotion{
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  
 </style>
