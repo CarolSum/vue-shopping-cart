@@ -82,6 +82,10 @@ const store = new Vuex.Store({
           count: 1
         });
       }
+    },
+    // 清空购物车
+    emptyCart (state) {
+      state.cartList = [];
     }
   },
   actions: {
@@ -90,6 +94,14 @@ const store = new Vuex.Store({
       setTimeout(() => {
         context.commit('setProductList', product_data);
       }, 500);
+    },
+    buy (context) {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          context.commit('emptyCart');
+          resolve();
+        }, 500);
+      });
     }
   }
 });

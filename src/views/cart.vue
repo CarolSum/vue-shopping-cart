@@ -219,5 +219,16 @@
     font-size: 12px;
     border-radius: 3px;
   }
-  
+  .cart-footer{
+    padding: 32px;
+    text-align: right;
+  }
+  .cart-footer-desc{
+    display: inline-block;
+    padding: 0 16px;
+  }
+  .cart-footer-desc span{
+    color: #f2352e;
+    font-size: 20px;
+  }
 </style>
